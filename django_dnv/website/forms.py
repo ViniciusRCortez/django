@@ -1,5 +1,5 @@
 from django import forms
-from django_dnv.website.models import Empregado
+from .models import Empregado
 
 
 class EmpregadoForm(forms.ModelForm):
