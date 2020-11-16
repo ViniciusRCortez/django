@@ -38,4 +38,6 @@ def update(request, id):
 
 def delete(request, id):
     empregados = Empregado.objects.get(id=id)
+    empregados.delete()
     return redirect('\show')
+

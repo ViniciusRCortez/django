@@ -1,10 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Cadastro funcionario</title>
+    {% load stacticfiles %}
+    <link rel="stylesheet" href="{% static '/style.css' %}">
 </head>
 <body>
-
+<table class="table table-striped table-bordered table-sm">
+    <thead class="thead-dark">
+    <tr>
+        <th>Id</th>
+        <th>Email</th>
+        <th>Contato</th>
+        <th>Comandos</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for empregado in empregados %}
+    <tr>
+        <a href="/edit/{{ empregado.id }}"></a>
+        <th>{{empregado.e_id}}</th>
+        <th>{{empregado.e_name}}</th>
+        <th>{{empregado.e_email}}</th>
+        <th>{{empregado.e_contact}}</th>
+        <td> <a href="/delete/{{ empregado.id }}">Deleta</a> </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<br>
+<br>
+<center> <a href="/emp" class="btn btn-primary">Novo cadastro</a> </center>
 </body>
 </html>

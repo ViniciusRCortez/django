@@ -1,10 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Index</title>
+    {% load stacticfiles %}
+    <link rel="stylesheet" href="{% static '/style.css' %}">
 </head>
 <body>
-
+<form   method="POST" class="post-form" action="/emp">
+        {% csrf_token %}
+    <div class="container">
+        <br>
+        <div class="form-group row">
+            <label class="col-sm-1 col-form-label"></label>
+            <div class="col-sm-4">
+                <h3>detalhes</h3>
+            </div>
+        </div>
+         <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Id:</label>
+            <div class="col-sm-4">
+                {{ form.e_id }}
+                </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Id:</label>
+            <div class="col-sm-4">
+                {{ form.e_name }}
+                </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Id:</label>
+            <div class="col-sm-4">
+                {{ form.e_email }}
+                </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Id:</label>
+            <div class="col-sm-4">
+                {{ form.e_contact }}
+                </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-1 col-form-label"></label>
+            <div class="col-sm-4">
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
+                </div>
+        </div>
+        </div>
+</form>
 </body>
 </html>
